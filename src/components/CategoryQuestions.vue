@@ -1,9 +1,12 @@
 <template lang="html">
-  <div v-if="categoryQuestions">
-    <h1>{{categotyQuestion.category}}</h1>
-      <p>Difficulty: {{question.difficulty}}</p>
-      <p>Question: {{question.question}}</p>
+  <div class="">
+    <div v-for="question in categoryQuestions">
+      <h1>{{question.category}}</h1>
+        <p>Difficulty: {{question.difficulty}}</p>
+        <p>Question: {{question.question}}</p>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -15,7 +18,7 @@ export default {
     }
   },
   methods: {
-    }
+  },
   }
 </script>
 
