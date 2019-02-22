@@ -14,7 +14,7 @@ export default {
     return {
       questions: [],
       categories: [],
-      CategoryQuestions: []
+      categoryQuestions: []
     }
   },
   components: {
@@ -29,10 +29,7 @@ export default {
     })
 
     eventBus.$on('clicked-category', (category) => {
-      this.CategoryQuestions = this.questions.filter(question => category === question.category)
-    })
-    eventBus.$on('category-questions', (questions) => {
-      this.CategoryQuestions = questions
+      this.categoryQuestions = this.questions.filter(question => category === question.category);
     })
   }
 }

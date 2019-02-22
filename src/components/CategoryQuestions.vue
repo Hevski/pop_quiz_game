@@ -1,5 +1,5 @@
 <template lang="html">
-  <div v-if="showQuestions()">
+  <div v-if="question">
     <h1>{{question.category}}</h1>
       <p>Difficulty: {{question.difficulty}}</p>
       <p>Question: {{question.question}}</p>
@@ -7,22 +7,17 @@
 </template>
 
 <script>
-import {eventBus} from '../main.js'
 export default {
   name: 'category-questions',
-  props: ['CategoryQuestions'],
+  props: ['question'],
   data () {
     return {
-      CategoryQuestions: []
+      categoryQuestions: []
     }
   },
-  props: ['CategoryQuestions'],
   methods: {
-    showQuestions(){
-      eventBus.$emit('CategoryQuestions', this.CategoryQuestions)
     }
   }
-}
 </script>
 
 <style lang="css" scoped>
