@@ -15,7 +15,7 @@ export default {
   data (){
     return {
       SelectedCategory: '',
-      CategoryQuestions: []
+      categoryQuestions: []
     }
   },
   props: ['categories'],

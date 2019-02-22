@@ -1,6 +1,6 @@
 <template lang="html">
-  <div v-if="question">
-    <h1>{{question.category}}</h1>
+  <div v-if="categoryQuestions">
+    <h1>{{categotyQuestion.category}}</h1>
       <p>Difficulty: {{question.difficulty}}</p>
       <p>Question: {{question.question}}</p>
   </div>
@@ -9,10 +9,9 @@
 <script>
 export default {
   name: 'category-questions',
-  props: ['question'],
+  props: ['categoryQuestions'],
   data () {
     return {
-      categoryQuestions: []
     }
   },
   methods: {

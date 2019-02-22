@@ -2,6 +2,7 @@
   <div class="">
       <h1>Quizzard!</h1>
       <categories-list :categories='categories'></categories-list>
+      <category-question :categoryQuestions='categoryQuestions'></category-question>
   </div>
 </template>
 
@@ -18,7 +19,8 @@ export default {
     }
   },
   components: {
-    "categories-list": CategoriesList
+    "categories-list": CategoriesList,
+    "category-question": CategoryQuestions
   },
   mounted(){
     fetch('https://opentdb.com/api.php?amount=100')
