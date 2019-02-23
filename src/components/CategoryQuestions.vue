@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="question">
-    <question v-for="question in categoryQuestions" :question="question" :key="" />
+    <question v-for="(question, index) in categoryQuestions" :question="question" :key="index" />
   </div>
 </template>
 
