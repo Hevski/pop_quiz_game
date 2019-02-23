@@ -18,10 +18,16 @@ export default {
       questions: [],
       categories: [],
       categoryQuestions: [],
-      name: null
+      name: null,
     }
   },
   methods: {
+    formatQuestions: function(res){
+      this.questions = this.questions.map(function(question){
+        question.incorrect_answers.push(question.correct_answer)
+        return question
+      });
+    }
   },
   components: {
     "categories-list": CategoriesList,
@@ -32,10 +38,11 @@ export default {
     fetch('https://opentdb.com/api.php?amount=100')
     .then(res => res.json())
     .then(questions => this.questions = questions.results)
-    .then(() => { this.categories = [... new Set (this.questions.map(question => question.category))]
-    // .split(': ')[0]
+    .then((res) => {
+      this.formatQuestions(res)
     })
-
+    .then(() => { this.categories = [... new Set (this.questions.map(question => question.category))]
+    })
     eventBus.$on('clicked-category', (category) => {
       this.categoryQuestions = this.questions.filter(question => category === question.category);
     })

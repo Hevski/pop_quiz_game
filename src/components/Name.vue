@@ -1,6 +1,6 @@
 <template lang="html">
   <div @submit.prevent="onSubmit">
-    <p>Enter your name</p>
+    <p>Enter players name:</p>
     <input v-model="name" type="text" value="">
     <button v-on:click="submitName">Add name</button>
     <h1>{{msg}}</h1>
@@ -18,11 +18,15 @@ export default {
   },
   methods: {
     submitName() {
-      this.msg = "Your a quizzard " + this.name + "!";
+      this.msg = "You're a Quizzard " + this.name + "!";
     }
    }
   }
 </script>
 
 <style lang="css" scoped>
+
+h1 {
+  font-family: 'Aclonica', sans-serif;
+}
 </style>
