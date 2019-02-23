@@ -3,7 +3,7 @@
       <h1>Welcome to Quizzard!</h1>
       <players-name :playersName='name'></players-name>
       <categories-list :categories='categories'></categories-list>
-      <category-question :categoryQuestions='categoryQuestions'></category-question>
+      <category-questions :categoryQuestions='categoryQuestions'></category-questions>
   </div>
 </template>
 
@@ -11,6 +11,8 @@
 import CategoriesList from './components/CategoriesList.vue';
 import CategoryQuestions from './components/CategoryQuestions.vue';
 import Name from './components/Name.vue';
+import Question from './components/Question.vue';
+
 import {eventBus} from './main.js';
 export default {
   data(){
@@ -31,8 +33,9 @@ export default {
   },
   components: {
     "categories-list": CategoriesList,
-    "category-question": CategoryQuestions,
-    "players-name": Name
+    "category-questions": CategoryQuestions,
+    "players-name": Name,
+    // "question" : Question
   },
   mounted(){
     fetch('https://opentdb.com/api.php?amount=100')
@@ -56,8 +59,4 @@ h1 {
   text-align: center;
   font-size: 50px;
 }
-
-  * {
-    background: #baffba;
-  }
 </style>
