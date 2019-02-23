@@ -1,16 +1,16 @@
 <template lang="html">
   <div class="question">
-    <div v-for="(question, index) in categoryQuestions">
+    <div v-for="question in categoryQuestions">
       <div class="each-q">
         <p>Difficulty: {{question.difficulty}}</p>
         <p>Question: {{question.question}}</p>
         <div v-for="answer in question.incorrect_answers"class="">
           <p>{{answer}}</p>
           <div class="answers">
-            <input type="radio" name="answer" value="answer">
+            <input type="radio" v-model="selectedAnswer" name="answer" v-bind:value="answer">
           </div>
         </div>
-        <button @click="submitAnswer">Answer</button>
+        <button v-on:click="submitAnswer">Answer</button>
         <!-- <h3 v-if="answer === question.correct_answer">Correct!</h3>
         <h3 v-else="answer !== question.correct_answer">You need more quizzarding practice</h3> -->
       </div>
@@ -26,19 +26,21 @@ export default {
   props: ['categoryQuestions'],
   data () {
     return {
-      // selectedAnswer: ''
+      selectedAnswer: '',
+      correct_answer: '',
+      incorrect_answers: []
     }
   },
   methods: {
     submitAnswer(){
-      // selectedAnswer =
+      if this.categoryQuestions.
     }
    },
   }
 </script>
 
 <style lang="css" scoped>
-
+/*
 .question {
   display: flex;
   justify-content: center;
@@ -69,5 +71,5 @@ p {
 
 .answers {
   background: beige;
-}
+} */
 </style>
