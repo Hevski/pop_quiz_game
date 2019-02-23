@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
     <div v-for="question in categoryQuestions">
-      <h1>{{question.category}}</h1>
+      <!-- <h1>{{question.category}}</h1> -->
         <p>Difficulty: {{question.difficulty}}</p>
         <p>Question: {{question.question}}</p>
     </div>
