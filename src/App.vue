@@ -51,5 +51,13 @@ export default {
 </script>
 
 <style>
+h1 {
+  font-family: 'Aclonica', sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
 
+  * {
+    background: #baffba;
+  }
 </style>

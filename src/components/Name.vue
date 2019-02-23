@@ -1,8 +1,10 @@
 <template lang="html">
   <div @submit.prevent="onSubmit">
-    <p>Enter players name:</p>
-    <input v-model="name" type="text" value="">
-    <button v-on:click="submitName">Add name</button>
+    <p class="name">Enter players name:</p>
+    <div class="name-input">
+      <input v-model="name" type="text" value="">
+      <button v-on:click="submitName">Add name</button>
+    </div>
     <h1>{{msg}}</h1>
   </div>
 </template>
@@ -28,5 +30,18 @@ export default {
 
 h1 {
   font-family: 'Aclonica', sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+
+.name {
+  font-family: 'Aclonica', sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+.name-input {
+  display: flex;
+  justify-content: center;
 }
 </style>

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="select">
   <select v-on:change="handleChange" v-model="SelectedCategory">
     <option disable value=''>Select a category...</option>
     <option v-for="category in categories" :value="category" >{{category}}</option>
@@ -28,4 +28,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.select {
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+}
+
 </style>
