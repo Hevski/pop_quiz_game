@@ -51,6 +51,7 @@ export default {
   background: #baffba;;
   flex-wrap: wrap;
   padding: 20px;
+  text-align: -webkit-center;
 }
 
 .answers {
