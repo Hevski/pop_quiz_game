@@ -29,6 +29,7 @@ export default {
     formatQuestions: function(res){
       this.questions = this.questions.map(function(question){
         question.incorrect_answers.push(question.correct_answer)
+        question.incorrect_answers.sort()
         return question
       });
     },

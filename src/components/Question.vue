@@ -2,7 +2,7 @@
   <div class="each-q">
     <p>Difficulty: {{question.difficulty}}</p>
     <p>Question: {{question.question}}</p>
-    <div v-for="(answer, index) in question.incorrect_answers.sort()"class="">
+    <div v-for="(answer, index) in question.incorrect_answers"class="">
       <p>{{answer}}</p>
       <div class="answers">
         <input type="radio" v-model="selectedAnswer" name="answer + index" v-bind:value="answer">
