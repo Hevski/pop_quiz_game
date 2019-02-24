@@ -34,6 +34,7 @@ export default {
       this.message = "Your answer is correct!";
     } else {
       this.message = "Wrong answer! You need more quizzarding practice!";
+      this.score = 0
     }
   },
   increaseScore() {
