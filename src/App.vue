@@ -1,6 +1,6 @@
 <template>
   <div class="">
-      <!-- <h1>Welcome to Quizzard!</h1> -->
+      <!-- <img src="./assets/wizard.png" alt="Italian Trulli"> -->
       <players-name :playersName='name'></players-name>
       <categories-list :categories='categories'></categories-list>
       <category-questions :categoryQuestions='categoryQuestions'></category-questions>
@@ -62,11 +62,8 @@ export default {
 <style>
 
 body {
-  background: #81c3b3;
+  background: url('./assets/wizard.png') no-repeat fixed center;
+  padding-top: 10px;
 }
-h1 {
-  font-family: 'Aclonica', sans-serif;
-  text-align: center;
-  font-size: 50px;
-}
+
 </style>

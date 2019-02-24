@@ -46,20 +46,23 @@ export default {
   padding: 12px;
   margin: 3px;
   width: 400px;
-  height: 400px;
+  height: auto;
   border-radius: 10px;
   background: #baffba;;
   flex-wrap: wrap;
   padding: 20px;
   text-align: -webkit-center;
+  opacity: 0.9;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
 }
 
 .answers {
-  background: #baffba;;
+  background: #baffba;
 }
 
 p {
-  background: #baffba;;
+  background: #baffba;
   margin: 0;
   padding: 6px;
 }
