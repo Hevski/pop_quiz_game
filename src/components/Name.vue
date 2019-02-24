@@ -3,10 +3,10 @@
     <div class="header">
       <h1>{{title}}{{msg}}</h1>
       <p class="name">Enter players name:</p>
-    <div class="name-input">
-      <input class="input" v-model="name" type="text" value="">
-      <button class="name-button"v-on:click="submitName">Add name</button>
-    </div>
+      <div class="name-input">
+        <input class="input" v-model="name" type="text" value="">
+        <button class="name-button"v-on:click="submitName">Add name</button>
+      </div>
     </div>
   </div>
 </template>

@@ -2,6 +2,7 @@
   <div class="">
       <!-- <img src="./assets/wizard.png" alt="Italian Trulli"> -->
       <players-name :playersName='name'></players-name>
+      <score :totalScore='totalScore'></score>
       <categories-list :categories='categories'></categories-list>
       <category-questions :categoryQuestions='categoryQuestions'></category-questions>
   </div>
@@ -12,6 +13,7 @@ import CategoriesList from './components/CategoriesList.vue';
 import CategoryQuestions from './components/CategoryQuestions.vue';
 import Name from './components/Name.vue';
 import Question from './components/Question.vue';
+import Score from './components/Score.vue';
 
 import {eventBus} from './main.js';
 export default {
@@ -21,6 +23,7 @@ export default {
       categories: [],
       categoryQuestions: [],
       name: null,
+      totalScore: 0
     }
   },
   methods: {
@@ -29,12 +32,16 @@ export default {
         question.incorrect_answers.push(question.correct_answer)
         return question
       });
+    },
+    calTotalScore: function(score){
+      this.totalScore += score
     }
   },
   components: {
     "categories-list": CategoriesList,
     "category-questions": CategoryQuestions,
     "players-name": Name,
+    "score": Score
   },
   mounted(){
     fetch('https://opentdb.com/api.php?amount=100')
@@ -54,7 +61,11 @@ export default {
       else {
       this.categoryQuestions = this.questions.filter(question => category === question.category);
       }
-    })
+    }),
+     eventBus.$on('increase-score', (score) => {
+       console.log(score);
+       this.calTotalScore(score)
+     })
     }
   }
 </script>

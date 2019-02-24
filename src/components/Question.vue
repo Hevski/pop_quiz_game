@@ -16,23 +16,31 @@
 </template>
 
 <script>
-import categoryQuestions from './CategoryQuestions.vue';
+// import categoryQuestions from './CategoryQuestions.vue';
+import {eventBus} from '../main.js'
 export default {
   props: ['question'],
   data () {
     return {
       selectedAnswer: '',
-      message: ''
+      message: '',
+      score: 0
     }
   },
   methods: {
     handleClick() {
     if (this.question.correct_answer === this.selectedAnswer) {
+      this.increaseScore()
+      eventBus.$emit('increase-score', this.score)
       this.message = "Your answer is correct!";
-    }else{
+      // return this.score += 1
+    } else {
       this.message = "Wrong answer! You need more quizzarding practice!";
     }
-    }
+  },
+  increaseScore() {
+    this.score += 1
+  }
   }
 }
 </script>
