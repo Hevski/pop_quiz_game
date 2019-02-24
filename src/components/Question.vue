@@ -1,18 +1,18 @@
 <template lang="html">
-      <div class="each-q">
-        <p>Difficulty: {{question.difficulty}}</p>
-        <p>Question: {{question.question}}</p>
-        <div v-for="(answer, index) in question.incorrect_answers.sort()"class="">
-          <p>{{answer}}</p>
-          <div class="answers">
-            <input type="radio" v-model="selectedAnswer" name="answer + index" v-bind:value="answer">
-          </div>
-        </div>
-        <div class="button">
-          <button v-on:click="handleClick">Answer</button>
-          <h3>{{message}}</h3>
-        </div>
+  <div class="each-q">
+    <p>Difficulty: {{question.difficulty}}</p>
+    <p>Question: {{question.question}}</p>
+    <div v-for="(answer, index) in question.incorrect_answers.sort()"class="">
+      <p>{{answer}}</p>
+      <div class="answers">
+        <input type="radio" v-model="selectedAnswer" name="answer + index" v-bind:value="answer">
       </div>
+    </div>
+    <div class="button">
+      <button v-on:click="handleClick">Answer</button>
+      <h3>{{message}}</h3>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -61,7 +61,7 @@ export default {
 p {
   background: #baffba;;
   margin: 0;
-  padding: 2px;
+  padding: 6px;
 }
 
 .button {

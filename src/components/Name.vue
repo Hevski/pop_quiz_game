@@ -1,11 +1,11 @@
 <template lang="html">
   <div @submit.prevent="onSubmit">
+    <h1>{{title}}{{msg}}</h1>
     <p class="name">Enter players name:</p>
     <div class="name-input">
       <input v-model="name" type="text" value="">
       <button v-on:click="submitName">Add name</button>
     </div>
-    <h1>{{msg}}</h1>
   </div>
 </template>
 
@@ -15,14 +15,16 @@ export default {
   data(){
     return {
       name: null,
-      msg: null
+      msg: null,
+      title: "Welcome to Quizzard"
     }
   },
   methods: {
     submitName() {
       this.msg = "You're a Quizzard " + this.name + "!";
+      this.title = ''
     }
-   }
+  },
   }
 </script>
 
