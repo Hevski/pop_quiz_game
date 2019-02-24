@@ -1,7 +1,7 @@
 <template lang="html">
   <GChart
-    :type="ColumnChart"
-    :data='chartData'
+    :type="chartType"
+    :data='questions'
     :options="chartOptions"
   />
 </template>
@@ -10,7 +10,7 @@
 import { GChart } from 'vue-google-charts'
 export default {
   name: 'graph',
-  props: ['graph', 'chartData', 'chartOptions'],
+  props: ['questions'],
   components: {
      "GChart": GChart
    }

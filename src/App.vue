@@ -4,7 +4,7 @@
       <score :totalScore='totalScore'></score>
       <categories-list :categories='categories'></categories-list>
       <category-questions :categoryQuestions='categoryQuestions'></category-questions>
-      <categoryGraph ></categoryGraph>
+      <categoryGraph :questions='questions'></categoryGraph>
   </div>
 </template>
 
@@ -30,8 +30,8 @@ export default {
       categoryQuestions: [],
       name: null,
       totalScore: 0,
-      chartType: "ColumnChart",
       chatData: [],
+      chartType: "ColumnChart",
       chartOptions: {
         chart: {
           title: 'Questions for Each Category'
