@@ -11,9 +11,6 @@ export default {
   props: ['categoryQuestions', 'question'],
   data () {
     return {
-      selectedAnswer: '',
-      correct_answer: '',
-      incorrect_answers: []
     }
   },
    components: {

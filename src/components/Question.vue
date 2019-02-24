@@ -16,7 +16,6 @@
 </template>
 
 <script>
-// import categoryQuestions from './CategoryQuestions.vue';
 import {eventBus} from '../main.js'
 export default {
   props: ['question'],
@@ -24,7 +23,7 @@ export default {
     return {
       selectedAnswer: '',
       message: '',
-      score: 0
+      score: 0,
     }
   },
   methods: {
@@ -33,7 +32,6 @@ export default {
       this.increaseScore()
       eventBus.$emit('increase-score', this.score)
       this.message = "Your answer is correct!";
-      // return this.score += 1
     } else {
       this.message = "Wrong answer! You need more quizzarding practice!";
     }

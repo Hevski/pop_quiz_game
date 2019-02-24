@@ -9,7 +9,6 @@
 
 <script>
 import {eventBus} from '../main.js'
-
 export default {
   name: 'categories-list',
   data (){

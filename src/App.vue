@@ -1,6 +1,5 @@
 <template>
   <div class="">
-      <!-- <img src="./assets/wizard.png" alt="Italian Trulli"> -->
       <players-name :playersName='name'></players-name>
       <score :totalScore='totalScore'></score>
       <categories-list :categories='categories'></categories-list>
@@ -61,9 +60,9 @@ export default {
       else {
       this.categoryQuestions = this.questions.filter(question => category === question.category);
       }
+      this.totalScore = 0
     }),
      eventBus.$on('increase-score', (score) => {
-       console.log(score);
        this.calTotalScore(score)
      })
     }

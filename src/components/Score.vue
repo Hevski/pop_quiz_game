@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="score">
-    <p>Your current score is {{totalScore}}</p>
+    <p>Your total score for this category {{totalScore}}</p>
   </div>
 </template>
 
@@ -24,6 +24,5 @@ export default {
   opacity: 0.8;
   border-style: solid;
   margin: 5px;
-  /* position: fixed; */
 }
 </style>
