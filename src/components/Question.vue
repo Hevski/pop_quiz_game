@@ -56,7 +56,7 @@ export default {
   width: 400px;
   height: auto;
   border-radius: 10px;
-  background: #baffba;;
+  background: #baffba;
   flex-wrap: wrap;
   padding: 20px;
   text-align: -webkit-center;
