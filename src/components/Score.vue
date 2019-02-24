@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  name: 'score',
   props: ['totalScore'],
 }
 </script>

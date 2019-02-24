@@ -31,6 +31,7 @@ export default {
 
 <style lang="css" scoped>
 
+
 .header {
   font-family: 'Aclonica', sans-serif;
   text-align: center;

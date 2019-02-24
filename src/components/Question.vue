@@ -62,6 +62,7 @@ export default {
   opacity: 0.9;
   font-family: 'Merriweather Sans', sans-serif;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .answers {
