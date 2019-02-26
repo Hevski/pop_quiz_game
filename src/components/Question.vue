@@ -10,6 +10,8 @@
     </div>
     <div class="button">
       <button v-on:click="handleClick">Answer</button>
+      <!-- v-if="!isHidden" -->
+      <!-- :disabled="handleClick" -->
       <h3>{{message}}</h3>
     </div>
   </div>
@@ -23,12 +25,14 @@ export default {
     return {
       selectedAnswer: '',
       message: '',
+      isHidden: false,
       score: 0,
     }
   },
   methods: {
     handleClick() {
     if (this.question.correct_answer === this.selectedAnswer) {
+      this.isHidden = true
       this.increaseScore()
       eventBus.$emit('increase-score', this.score)
       this.message = "Your answer is correct!";
@@ -38,7 +42,8 @@ export default {
     }
   },
   increaseScore() {
-    this.score += 1
+    this.score = 1
+    // console.log(this.score);
   }
   }
 }

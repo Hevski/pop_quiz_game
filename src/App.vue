@@ -4,14 +4,8 @@
       <score :totalScore='totalScore'></score>
       <categories-list :categories='categories'></categories-list>
       <category-questions :categoryQuestions='categoryQuestions'></category-questions>
-      <categoryGraph :questions='questions'></categoryGraph>
   </div>
 </template>
-
-<!-- v-if="chartData"
-:type="chartType"
-:data="chartData"
-:options="chartOptions" -->
 
 <script>
 import CategoriesList from './components/CategoriesList.vue';
@@ -19,8 +13,6 @@ import CategoryQuestions from './components/CategoryQuestions.vue';
 import Name from './components/Name.vue';
 import Question from './components/Question.vue';
 import Score from './components/Score.vue';
-import Graph from './components/Graph.vue';
-import { GChart } from 'vue-google-charts';
 import {eventBus} from './main.js';
 export default {
   data(){
@@ -30,13 +22,6 @@ export default {
       categoryQuestions: [],
       name: null,
       totalScore: 0,
-      chatData: [],
-      chartType: "ColumnChart",
-      chartOptions: {
-        chart: {
-          title: 'Questions for Each Category'
-        }
-      }
     }
   },
   methods: {
@@ -49,19 +34,13 @@ export default {
     },
     calTotalScore: function(score){
       this.totalScore += score
-    },
-      generateChartData: function(){
-				const chartData = map(this.questions, question => [question.category, question.question.length])
-				chartData[0] = ["Category", "Questions"];
-				this.chartData = chartData;
-			}
+    }
   },
   components: {
     "categories-list": CategoriesList,
     "category-questions": CategoryQuestions,
     "players-name": Name,
-    "score": Score,
-    "categoryGraph": Graph
+    "score": Score
   },
   mounted(){
     fetch('https://opentdb.com/api.php?amount=100')
@@ -73,8 +52,6 @@ export default {
     .then(() => { this.categories = [... new Set (this.questions.map(question => question.category))]
     })
     .then(()=> this.categories.unshift('All Categories'))
-    .then(() => { this.generateChartData()
-    })
 
     eventBus.$on('clicked-category', (category) => {
       if (category === 'All Categories') {
