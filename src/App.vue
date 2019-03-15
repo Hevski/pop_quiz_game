@@ -43,7 +43,7 @@ export default {
     "score": Score
   },
   mounted(){
-    fetch('https://opentdb.com/api.php?amount=100')
+    fetch('https://opentdb.com/api.php?amount=50')
     .then(res => res.json())
     .then(questions => this.questions = questions.results)
     .then((res) => {

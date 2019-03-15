@@ -25,7 +25,7 @@ export default {
     return {
       selectedAnswer: '',
       message: '',
-      isHidden: false,
+      // isHidden: false,
       score: 0,
     }
   },
